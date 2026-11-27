@@ -178,7 +178,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <button
           type="button"
           onClick={() => setActiveTab("highlights")}
-          className={`flex-1 py-1.5 rounded-xl transition-all ${
+          className={`flex-1 py-1.5 px-2 rounded-xl whitespace-nowrap text-center transition-all ${
             activeTab === "highlights"
               ? "bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-sm"
               : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
@@ -189,35 +189,35 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <button
           type="button"
           onClick={() => setActiveTab("preview")}
-          className={`flex-1 py-1.5 rounded-xl transition-all ${
+          className={`flex-1 py-1.5 px-2 rounded-xl whitespace-nowrap text-center transition-all ${
             activeTab === "preview"
               ? "bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-sm"
               : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
           }`}
         >
-          Live Architecture
+          Preview
         </button>
         <button
           type="button"
           onClick={() => setActiveTab("stack")}
-          className={`flex-1 py-1.5 rounded-xl transition-all ${
+          className={`flex-1 py-1.5 px-2 rounded-xl whitespace-nowrap text-center transition-all ${
             activeTab === "stack"
               ? "bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-sm"
               : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
           }`}
         >
-          Tech Stack
+          Stack
         </button>
       </div>
 
       {/* Tab Content Display */}
-      <div className="h-[215px] mb-6 flex flex-col justify-start">
+      <div className="min-h-[250px] flex-1 flex flex-col justify-start mb-6 overflow-hidden">
         {activeTab === "highlights" && (
-          <ul className="space-y-2.5">
+          <ul className="space-y-3 flex-1 flex flex-col justify-start">
             {project.highlights.map((item, i) => (
               <li
                 key={i}
-                className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed"
+                className="flex items-start gap-2.5 text-xs sm:text-[13px] text-zinc-600 dark:text-zinc-300 leading-relaxed"
               >
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                 <span>{item}</span>
@@ -229,12 +229,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         {activeTab === "preview" && renderInteractiveMock()}
 
         {activeTab === "stack" && (
-          <div className="space-y-4">
+          <div className="space-y-4 flex-1 flex flex-col justify-between">
             <div className="flex flex-wrap gap-1.5">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 rounded-xl text-xs font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 border border-zinc-200/80 dark:border-zinc-700/60"
+                  className="px-2.5 py-1 rounded-xl text-xs font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 border border-zinc-200/80 dark:border-zinc-700/60"
                 >
                   {tech}
                 </span>
@@ -258,7 +258,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       {/* Footer CTAs */}
-      <div className="pt-4 border-t border-zinc-200/50 dark:border-zinc-800/70 flex items-center justify-between gap-3">
+      <div className="mt-auto pt-4 border-t border-zinc-200/50 dark:border-zinc-800/70 flex items-center justify-between gap-3">
         <a
           href={project.githubUrl}
           target="_blank"
