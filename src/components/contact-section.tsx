@@ -29,7 +29,7 @@ export function ContactSection() {
         </h2>
 
         <p className="max-w-xl mx-auto text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-          I&apos;m looking for a full-time Senior Frontend Developer role where I can drive product architecture, implement high-performance interfaces, and mentor engineering teams.
+          I&apos;m looking for a full-time Senior Frontend Developer role where I can drive product architecture and implement high-performance interfaces.
         </p>
 
         {/* Email Box with One-Click Copy */}
